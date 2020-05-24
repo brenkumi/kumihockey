@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Brendan Kumagai
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,28 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Neuroscience Data Analyst
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: McMaster University, Visual Neuroscience Lab
+  url: "http://www.visualneurosciencelab.ca/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: Aspiring data scientist with a passion for hockey and science.
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Hockey Analytics and Operations
+- Data Science
+- Neuroscience
+- Biomechanics
+- Conservation and Sustainability
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: B.Sc. in Mathematics and Statistics
+    institution: McMaster University
+    year: 2020
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -44,16 +40,16 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+  link: "mailto:brendankumagai@gmail.com"
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://twitter.com/BrendanKumagai
+- icon: linkedin
+  icon_pack: fab
+  link: https://ca.linkedin.com/in/brendan-kumagai
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/brenkumi
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -61,7 +57,7 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: "brendankumagai@gmail.com"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -70,6 +66,10 @@ user_groups:
 - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am an aspiring data scientist that has recently graduated from McMaster University with Bachelor of Science in Mathematics and Statistics in April 2020. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am currently working with the Visual Neuroscience Lab at McMaster for the summer of 2020 as a recipient of the James Stewart Research Support Award under the supervision of Dr. Kathryn Murphy. In this position, I have been applying machine learning techniques to big data in an attempt address questions related to the neurobiological development of the human visual cortex.
+
+My career objective is to apply data science methods to find innovative insights and solve real-world problems. I am particularly interested in employing my skills in fields that I am passionate about such as hockey, neuroscience, biomechanics, and conservation and sustainability.
+
+In my spare time, I love to share my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks and a ball hockey instructor with the MLSE LaunchPad.
