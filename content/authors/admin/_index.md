@@ -70,6 +70,6 @@ I am an aspiring data scientist that has recently graduated from McMaster Univer
 
 I am currently working with the Visual Neuroscience Lab at McMaster for the summer of 2020 as a recipient of the James Stewart Research Support Award under the supervision of Dr. Kathryn Murphy. In this position, I have been applying machine learning techniques to big data in an attempt address questions related to the neurobiological development of the human visual cortex.
 
-My career objective is to apply data science methods to find innovative insights and solve real-world problems. I am particularly interested in employing my skills in fields that I am passionate about such as hockey, neuroscience, biomechanics, and conservation and sustainability.
+My career objective is to apply data science methods to find innovative insights and solve real-world problems. I am particularly interested in employing my skills in fields that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and (especially) hockey.
 
 In my spare time, I love to share my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks and a ball hockey instructor with the MLSE LaunchPad.

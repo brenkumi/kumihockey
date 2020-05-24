@@ -1,9 +1,9 @@
 +++
-# A Projects section created with the Portfolio widget.
-widget = "portfolio"  # See https://sourcethemes.com/academic/docs/page-builder/
+# All media appearances
+widget = "portfolio"  # Type of widget
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 80  # Order that this section will appear.
+weight = 60  # Order that this section will appear.
 
 title = "Media"
 subtitle = ""
