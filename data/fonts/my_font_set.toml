@@ -1,0 +1,11 @@
+# Font style metadata
+name = "My Fonts"
+
+# Optional Google font URL
+google_fonts = "Catamaran:400,700|Oswald:400,700"
+
+# Font families
+heading_font = "Oswald"
+body_font = "Catamaran"
+nav_font = "Oswald"
+mono_font = "Catamaran"

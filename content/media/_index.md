@@ -1,5 +1,5 @@
 ---
-title: Projects & Talks
+title: Media & Appearances
 
 # View.
 #   1 = List
