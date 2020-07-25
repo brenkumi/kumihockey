@@ -2,27 +2,11 @@
 # Documentation: https://sourcethemes.com/academic/docs/customization/#page-sharer
 
 [[buttons]]
-  id = "email"
-  url = "mailto:brendankumagai@gmail.com"
-  title = "Email"
-  icon_pack = "fas"
-  icon = "envelope"
-  enable = true
-
-[[buttons]]
   id = "twitter"
-  url = "https://twitter.com/BrendanKumagai"
+  url = "https://twitter.com/intent/tweet?url={url}&text={title}"
   title = "Twitter"
   icon_pack = "fab"
   icon = "twitter"
-  enable = true
-
-[[buttons]]
-  id = "linkedin"
-  url = "https://www.linkedin.com/in/brendan-kumagai/"
-  title = "LinkedIn"
-  icon_pack = "fab"
-  icon = "linkedin-in"
   enable = true
 
 [[buttons]]
@@ -31,18 +15,31 @@
   title = "Facebook"
   icon_pack = "fab"
   icon = "facebook"
-  enable = false
+  enable = true
 
+[[buttons]]
+  id = "email"
+  url = "mailto:?subject={title}&body={url}"
+  title = "Email"
+  icon_pack = "fas"
+  icon = "envelope"
+  enable = true
 
-
+[[buttons]]
+  id = "linkedin"
+  url = "https://www.linkedin.com/shareArticle?url={url}&title={title}"
+  title = "LinkedIn"
+  icon_pack = "fab"
+  icon = "linkedin-in"
+  enable = true
 
 [[buttons]]
   id = "whatsapp"
-  url = "https://web.whatsapp.com/send?text={title}%20{url}"
+  url = "whatsapp://send?text={title}%20{url}"
   title = "WhatsApp"
   icon_pack = "fab"
   icon = "whatsapp"
-  enable = false
+  enable = true
 
 [[buttons]]
   id = "weibo"
@@ -50,7 +47,7 @@
   title = "Weibo"
   icon_pack = "fab"
   icon = "weibo"
-  enable = false
+  enable = true
 
 [[buttons]]
   id = "reddit"
