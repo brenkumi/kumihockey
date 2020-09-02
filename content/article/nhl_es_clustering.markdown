@@ -1,0 +1,121 @@
+---
+title: "Categorizing NHL Player ES Shot Tendencies Using Robust Sparse k-Means Clustering"
+summary: "In the final article of my three-part series on player shot clustering, I will turn my attention to a league and strength state with richer shot data as I cluster NHL even strength shot data over the past three seasons. The higher volume of data will allow for sounder methodology with a hexbinning and robust sparse k-means clustering (RSKC) approach."
+diagram: yes
+date: '2020-08-27'
+markup: mmark
+math: yes
+image:
+  caption: null
+  placement: null
+---
+
+
+
+
+
+
+
+
+# Introduction
+
+
+
+
+# Hexbinning Approach
+
+
+Controversal binning approach
+
+Why we need to bin the data
+
+How we bin it (diagram)
+
+Delta of mean
+
+
+# What is RSKC?
+
+
+
+
+## Why Use Hierarchical Clustering?
+
+Better for high-dimensional analysis
+
+
+Iterate?
+
+
+# Clustering Results
+
+Network?
+
+## Cluster 1
+
+## Cluster 2
+
+## Cluster 3
+
+## Cluster 4
+
+## Cluster 5
+
+# Interesting Observations
+
+## TBD
+
+
+
+
+# Conclusion
+
+## Limitations
+
+
+## Future work
+
+
+# The Code
+
+## Loading and Preparing the Data
+
+Load all necessary packages.
+
+```
+library(tidyverse)
+```
+
+Load the data set (this data can be found on my [Github](https://github.com/brenkumi/kumihockey) under content/article/projectdata).
+
+```
+ohl.shot.data = read_csv("projectdata/ohl-shot-data.csv")
+```
+
+## Creating Shot Maps of the Data
+
+
+## Creating Regions and Binning the Data
+
+
+## Performing Hierarchical Clustering
+
+
+## Creating Heatmaps of the Data
+
+
+
+## Bootstrapping the Data
+
+
+## Confidence Intervals of Bootstrap Resampling
+
+
+
+
+# References
+
+
+
+
+

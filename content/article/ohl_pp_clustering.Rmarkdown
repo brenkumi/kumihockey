@@ -1,8 +1,8 @@
 ---
-title: "Categorizing OHL PP Styles Using Hierarchical Clustering"
-summary: "In this article I will demonstrate how to group players based on their power play shot charts through Ward's Linkage Hierarchical Clustering. Following that I will use bootstrap resampling to generate confidence intervals for each player"
+title: "Categorizing OHL Player PP Shot Tendencies Using Hierarchical Clustering"
+summary: "In this article I will demonstrate how to group players based on their power play shot locations through Ward's Linkage Hierarchical Clustering."
 diagram: yes
-date: '2020-08-15'
+date: '2020-08-31'
 markup: mmark
 math: yes
 image:
@@ -18,59 +18,170 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
+```{r packages}
+library(here)
 library(tidyverse)
 library(png)
-library(gcookbook)
-library(hrbrthemes)
+library(gcookbook); library(hrbrthemes) 
 library(sp)
+library(reshape2)
+library(plotly)
+library(magrittr)
 ```
 
-```{r}
+```{r data}
 ohl.shot.data = read_csv("projectdata/ohl-shot-data.csv")
 halfrink = readPNG("projectpics/nhlhalfrink.png")
 ```
 
+```{r region polygons}
+netfront = data.frame("x" = c(-12.5, -22.5, -12.5, 12.5, 22.5, 12.5), "y" = c(89, 81, 73, 73, 81, 89))
+
+bumper = data.frame("x" = c(-12.5, -12.5, 12.5, 12.5), "y" = c(73, 47.5, 47.5, 73))
+
+leftwing = data.frame("x" = c(-37.5, -37.5, -22.5, -12.5, -12.5), "y" = c(47.5, 69, 81, 73, 47.5))
+
+rightwing = data.frame("x" = c(37.5, 37.5, 22.5, 12.5, 12.5), "y" = c(47.5, 69, 81, 73, 47.5))
+
+leftpoint = data.frame("x" = c(-37.5, -37.5, 0, 0), "y" = c(47.5, 25, 25, 47.5))
+
+rightpoint = data.frame("x" = c(0, 0, 37.5, 37.5), "y" = c(47.5, 25, 25, 47.5))
+
+perimeter = data.frame("x" = c(-42.5, -42.5, 42.5, 42.5, 37.5, 37.5, 12.5, -12.5, -37.5, -37.5), 
+                       "y" = c(25, 100, 100, 25, 25, 69, 89, 89, 69, 25))
+```
+
+```{r prep}
+# Calculate the total number of shots in each region for each player
+ohl.pp.region.counts = ohl.shot.data %>%
+  filter(strength == "PP") %>%
+  mutate(netfront = point.in.polygon(real_x, real_y, netfront$x, netfront$y),
+         bumper = point.in.polygon(real_x, real_y, bumper$x, bumper$y),
+         leftpoint = point.in.polygon(real_x, real_y, leftpoint$x, leftpoint$y),
+         rightpoint = point.in.polygon(real_x, real_y, rightpoint$x, rightpoint$y),
+         perimeter = point.in.polygon(real_x, real_y, perimeter$x, perimeter$y),
+         leftwing = point.in.polygon(real_x, real_y, leftwing$x, leftwing$y),
+         rightwing = point.in.polygon(real_x, real_y, rightwing$x, rightwing$y)) %>%
+  mutate(netfront = ifelse(netfront == 2, 1, netfront),
+         bumper = ifelse(bumper == 2, 1, bumper),
+         leftpoint = ifelse(leftpoint == 2, 1, leftpoint),
+         rightpoint = ifelse(rightpoint == 2, 1, rightpoint),
+         perimeter = ifelse(perimeter == 2, 1, perimeter),
+         leftwing = ifelse(leftwing == 2, 1, leftwing),
+         rightwing = ifelse(rightwing == 2, 1, rightwing)) %>%
+  mutate(sum = netfront + bumper + leftpoint + rightpoint + perimeter + leftwing + rightwing) %>%
+  mutate(perimeter = ifelse(perimeter == 1 & sum == 2, 0, perimeter),
+         leftpoint = ifelse(leftpoint == 1 & rightpoint == 1, 0, leftpoint),
+         leftpoint = ifelse(leftpoint == 1 & leftwing == 1, 0, leftpoint),
+         rightpoint = ifelse(rightpoint == 1 & rightwing == 1, 0, rightpoint),
+         bumper = ifelse(bumper == 1 & sum == 2, 0, bumper),
+         netfront = ifelse(netfront == 1 & leftwing == 1, 0, netfront),
+         netfront = ifelse(netfront == 1 & rightwing == 1, 0, netfront)) %>%
+  mutate(sum2 = netfront + bumper + leftpoint + rightpoint + perimeter + leftwing + rightwing) %>%
+  filter(sum != 0) %>%
+  select(player, netfront, bumper, leftpoint, rightpoint, perimeter, leftwing, rightwing) %>%
+  mutate(region = case_when(
+    netfront == 1 ~ "netfront",
+    bumper == 1 ~ "bumper",
+    leftpoint == 1 ~ "leftpoint",
+    rightpoint == 1 ~ "rightpoint",
+    perimeter == 1 ~ "perimeter",
+    leftwing == 1 ~ "leftwing",
+    rightwing == 1 ~ "rightwing"
+  )) %>%
+  group_by(player, region) %>%
+  tally() %>%
+  dcast(player ~ region, value.var = "n") %>%
+  replace(is.na(.), 0) %>%
+  filter(bumper + leftpoint + rightpoint + leftwing + rightwing + netfront + perimeter >= 40)
+
+# Calculate the proportion of shots in each region for each player
+ohl.pp.region.proportions = ohl.pp.region.counts %>%
+  mutate(sum = leftwing + rightwing + leftpoint + rightpoint + netfront + bumper + perimeter) %>%
+  mutate(leftwing = leftwing / sum, rightwing = rightwing / sum,
+         leftpoint = leftpoint / sum, rightpoint = rightpoint / sum,
+         netfront = netfront / sum, bumper = bumper / sum) %>%
+  select(-perimeter, -sum) %>%
+  column_to_rownames("player")
+```
+
+
+
 # Introduction
 
-If you are a follower of hockey analytics, you've probably heard the term clustering before. If you haven't, clustering is a machine learning method that groups together similar observations in our data.
+Since the NHL was formed in 1917, the OHL (formerly OHA before 1980) has consistently been one of the best pipelines for future NHL stars. However, many hockey fans don't have the ability or time to watch these prospects on a regular basis.
 
-There has been some great work applying clustering to hockey in the past including the clustering of pass locations by David Yu and the SportLogiq team at [CBJHAC](https://www.youtube.com/watch?v=TENd93QJt-8&t=6852s) and [ISOLHAC](https://www.youtube.com/watch?v=Q-kWb6Vshmo&t=1860s) as well as Daniel Weinberger on [HockeyGraphs](https://hockey-graphs.com/2019/09/04/visualizing-and-quantifying-passing-on-the-power-play/) and the clustering of player activity by Schulte et al. at [SSAC 2017](https://www.cs.sfu.ca/~oschulte/files/pubs/sloan-fix.pdf) just to name a couple and I hope to build on that by using **hierarchical clustering to group OHL players based on their power play shooting patterns**.
+The purpose of this article is to use **hierarchical clustering to group OHL players based on their power play shooting tendencies**. This will provide anyone who is interested in the OHL with an overview of where the league's top players are playing on the power play and also create a new, more in-depth framework for clustering players based off of shot location than what has been done in the public domain so far (to my knowledge).
 
-The motivation behind this project is to gain an understanding of where OHL players are positioned on the power play and how this may affect their goal/point totals for casual fans who may not be able to watch OHL games on a regular basis and also to identify and analyze any interesting cases that appear in the clusters.
+Clustering is a commonly-used machine learning algorithm that helps us find groups of similar objects (players, in this case) in data based on a given set of features (proportion of shots in each region, as defined in the following section). Recently, there has been some great work in applying clustering to passing data by [David Yu and the SportLogiq team at CBJHAC](https://www.youtube.com/watch?v=TENd93QJt-8&t=6852s) and [ISOLHAC](https://www.youtube.com/watch?v=Q-kWb6Vshmo&t=1860s) as well as [Daniel Weinberger on HockeyGraphs](https://hockey-graphs.com/2019/09/04/visualizing-and-quantifying-passing-on-the-power-play/). In terms of clustering shot data, previous work has been done on [clustering players based on shot type by a blogger by the name of Em](https://em-ee.netlify.app/post/nhl_clusters.html), [clustering players based on statistics to identify goal scorer styles by Alex Novet](https://hockey-graphs.com/2018/01/04/goal-scorer-cluster-analysis/), and [clustering players based on the mean xy-coordinates of their ES and PP shots by Jake Flancer](https://threepointgames.blogspot.com/2018/05/who-plays-where-determining-skater.html).
 
-The data is my cleaned up version of the OHL play-by-play data, which was scraped and shared by Dave MacPherson on [Twitter](https://twitter.com/davemacp/status/1239306719253204994). This pbp data did not include the strength state of each shot, it just had shot and penalty times, so I did what I could to classify the strength states, however, there is likely a slight margin of error of roughly +/- 5 shots for each player.
+This article will use the xy-coordinates of shots like Jake Flancer's work, but I hope to provide a more descriptive approach by using all of a player's shots rather than just the mean to potentially gain some further insights.
+
+The data I used to perform the clustering on is my cleaned up version of the OHL play-by-play data, which was scraped and shared by [Dave MacPherson on Twitter](https://twitter.com/davemacp/status/1239306719253204994). To be transparent, the raw PBP data did not include the strength state of each shots, so I created an algorithm that classified each shot as powerplay, even strength or short-handed, however, there is still likely a slight margin of error of roughly +/- 5 shots for each player.
+
+
+# Preparing the Data
+
+In terms of preparing the data for clustering, we cannot just throw in each individual shot for each player then cluster because there are an inconsistent number of shots and varying coordinates.
+
+To include all of a player's shots we must bin the data into one of six regions as shown in the plot below
+
+Controversial binning approach
+
+Why we need to bin the data
 
 
 
 
-Shot Charts
+How we bin it (diagram)
+
+```{r region plot, fig.cap = "A visual of the regions that the shot data will be binned into for clustering"}
+ggplot(data.frame(0)) +
+    theme_ipsum(axis_text_size = 0, grid = FALSE) +
+    annotation_raster(halfrink, ymin = 0, ymax= 100, xmin = -42.5, xmax = 42.5) +
+    geom_polygon(data = netfront, aes(x = x, y = y), fill = "yellow", alpha = 0.3) +
+    geom_polygon(data = bumper, aes(x = x, y = y), fill = "skyblue", alpha = 0.3) +
+    geom_polygon(data = leftpoint, aes(x = x, y = y), fill = "orange", alpha = 0.3) +
+    geom_polygon(data = rightpoint, aes(x = x, y = y), fill = "violet", alpha = 0.3) +
+    geom_polygon(data = perimeter, aes(x = x, y = y), fill = "grey", alpha = 0.3) +
+    geom_polygon(data = leftwing, aes(x = x, y = y), fill = "red", alpha = 0.2) +
+    geom_polygon(data = rightwing, aes(x = x, y = y), fill = "limegreen", alpha = 0.3) +
+    geom_text(x = 0, y = 81, label = "Netfront") +
+    geom_text(x = 0, y = 60, label = "Bumper") +
+    geom_text(x = 25, y = 60, label = "Right Flank") +
+    geom_text(x = -25, y = 60, label = "Left Flank") +
+    geom_text(x = 19.75, y = 36.875, label = "Right Point") +
+    geom_text(x = -19.75, y = 36.875, label = "Left Point") +
+    lims(x = c(-42.5, 42.5), y = c(0, 100)) +
+    coord_fixed(ratio = 1) +
+    labs(fill = NULL, x = NULL, y = NULL)
+```
+
 
 # What is Hierarchical Clustering?
 
-As mentioned in the introduction, clustering is a machine learning method used to group together similar observations in our data. In this article, I will be using Ward's Linkage Agglomerative Hierarchical Clustering to group players with at least 40 PP shots on goal based on where their shots are coming from. 
+As mentioned in the introduction, clustering is a machine learning method used to group together similar observations in our data. In this article, I will be using **Ward's Linkage Agglomerative Hierarchical Clustering** to group players with at least 40 PP shots on goal based on where their shots are coming from. 
 
-**Agglomerative hierarchical clustering** is a simple algorithm for grouping players and is commonly referred to as the "bottom-up" approach. We begin with all players in their own cluster, then we repeatedly combine the two most similar clusters together over and over until we have one big cluster. Following the creation of the tree diagram (called a dendrogram), we can "cut the tree" when we reach the desired number of clusters. This process is demonstrated in the video below. 
+**Agglomerative hierarchical clustering** is a simple algorithm for grouping players and is commonly referred to as the "bottom-up" approach. We begin with all players in their own cluster, then we repeatedly combine the two 'most similar' clusters together over and over until we have one big cluster. Following the creation of the tree diagram (called a dendrogram), we can "cut the tree" when we reach the desired number of clusters. This process is demonstrated in the video below. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/phtVghlqXT8" frameborder="0" allowfullscreen></iframe>
 
-**Ward's linkage** refers to criteria we use to measure distance between clusters. In Ward's linkage, we merge the two clusters that result in the smallest increase in overall deviation from the cluster centre. 
+**Ward's linkage** refers to criteria we use to measure similarity between players/clusters. In Ward's linkage, we merge the two clusters that result in the smallest increase in overall deviation from the cluster centre. That is, for each possible new 'link' in the tree, we calculate the squared difference between the player's
+
+In Ward's linkage, we merge the two clusters that result in the smallest increase in overall deviation from the cluster centre. 
 
 For more information on hierarchical clustering, [this video](https://www.youtube.com/watch?v=7xHsRkOdVwo) provides a good introduction and [this video](https://www.youtube.com/watch?v=vg1w5ZUF5lA) provides a further explanation of linkages.
 
+
 ## Why Use Hierarchical Clustering?
-
-
 
 Pros and cons
 
 Why it is good for us
 
-# Preparing the Data
 
-Why we need to bin the data
 
-How we bin it (diagram)
+
 
 # Clustering Results
 
@@ -100,35 +211,193 @@ Regula
 
 NB Struthers
 
-## The Issues
 
-Rossi & Wright
 
-# Bootstrapping
-
-Sam's article
-
-Motivation: Rossi, Wright; find players like these
 
 # Conclusion
 
+## Limitations
 
+Not robust to 'noisy' shot charts
+
+Lack of usefulness
+
+Binning approach / lack of data
 
 
 # The Code
 
-## Loading and Preparing the Data
+## Loading the Data and Packages
 
 Load all necessary packages.
 
-```
-library(tidyverse)
+```{r setup2, include=FALSE}
+library(knitr) # For formatting the document
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(results = FALSE)
 ```
 
-Load the data set (this data can be found on my [Github](https://github.com/brenkumi/kumihockey) under content/article/projectdata).
+```{r}
+library(here) # For folder calls and organization
 
+library(tidyverse) # For various data science packages
+
+library(png) # For loading in png's
+
+library(gcookbook); library(hrbrthemes) # For theme_ipsum() in ggplot
+
+library(sp) # For binning shots
+
+library(reshape2) # For the melt() and dcast() functions
+
+library(plotly) # To make interactive plots
+
+library(magrittr) # For the set_rownames() function
 ```
+
+Load the data set (this data can be found on my [Github](https://github.com/brenkumi/kumihockey) under content/article/projectdata) and the png of the half rink.
+
+```{r}
+# Load the OHL shot data
 ohl.shot.data = read_csv("projectdata/ohl-shot-data.csv")
+
+# Load the half rink png
+halfrink = readPNG("projectpics/nhlhalfrink.png")
+```
+ 
+
+
+
+## Preparing and Binning the Data
+
+Create the different regions of the offensive zone that we will use for clustering. Each of the regions below are represented by a data frame that contains the xy-coordinates of a polygon that encloses that region.
+
+```{r}
+netfront = data.frame("x" = c(-12.5, -22.5, -12.5, 12.5, 22.5, 12.5), "y" = c(89, 81, 73, 73, 81, 89))
+
+bumper = data.frame("x" = c(-12.5, -12.5, 12.5, 12.5), "y" = c(73, 47.5, 47.5, 73))
+
+leftwing = data.frame("x" = c(-37.5, -37.5, -22.5, -12.5, -12.5), "y" = c(47.5, 69, 81, 73, 47.5))
+
+rightwing = data.frame("x" = c(37.5, 37.5, 22.5, 12.5, 12.5), "y" = c(47.5, 69, 81, 73, 47.5))
+
+leftpoint = data.frame("x" = c(-37.5, -37.5, 0, 0), "y" = c(47.5, 25, 25, 47.5))
+
+rightpoint = data.frame("x" = c(0, 0, 37.5, 37.5), "y" = c(47.5, 25, 25, 47.5))
+
+perimeter = data.frame("x" = c(-42.5, -42.5, 42.5, 42.5, 37.5, 37.5, 12.5, -12.5, -37.5, -37.5), 
+                       "y" = c(25, 100, 100, 25, 25, 69, 89, 89, 69, 25))
+```
+
+
+
+```{r}
+# Calculate the total number of shots in each region for each player
+ohl.pp.region.counts = ohl.shot.data %>%
+  # Select just PP shots
+  filter(strength == "PP") %>%
+  # Create categorical variables for each region that are 1 if the shot is in the specified 
+  # region and 0 if not using the point.in.polygon function
+  mutate(netfront = point.in.polygon(real_x, real_y, netfront$x, netfront$y),
+         bumper = point.in.polygon(real_x, real_y, bumper$x, bumper$y),
+         leftpoint = point.in.polygon(real_x, real_y, leftpoint$x, leftpoint$y),
+         rightpoint = point.in.polygon(real_x, real_y, rightpoint$x, rightpoint$y),
+         perimeter = point.in.polygon(real_x, real_y, perimeter$x, perimeter$y),
+         leftwing = point.in.polygon(real_x, real_y, leftwing$x, leftwing$y),
+         rightwing = point.in.polygon(real_x, real_y, rightwing$x, rightwing$y)) %>%
+  # The point.in.polygon function labels regions as 2 if they are on the edge of the region
+  # Reduce all of these instances from 2 to 1
+  mutate(netfront = ifelse(netfront == 2, 1, netfront),
+         bumper = ifelse(bumper == 2, 1, bumper),
+         leftpoint = ifelse(leftpoint == 2, 1, leftpoint),
+         rightpoint = ifelse(rightpoint == 2, 1, rightpoint),
+         perimeter = ifelse(perimeter == 2, 1, perimeter),
+         leftwing = ifelse(leftwing == 2, 1, leftwing),
+         rightwing = ifelse(rightwing == 2, 1, rightwing)) %>%
+  # Calculate the sum of each of the regions (should be 1 for all shots)
+  mutate(sum = netfront + bumper + leftpoint + rightpoint + perimeter + leftwing + rightwing) %>%
+  # Reduce shots that are classified as multiple regions (on the edge of 2 regions) down to 1
+  mutate(perimeter = ifelse(perimeter == 1 & sum == 2, 0, perimeter),
+         leftpoint = ifelse(leftpoint == 1 & rightpoint == 1, 0, leftpoint),
+         leftpoint = ifelse(leftpoint == 1 & leftwing == 1, 0, leftpoint),
+         rightpoint = ifelse(rightpoint == 1 & rightwing == 1, 0, rightpoint),
+         bumper = ifelse(bumper == 1 & sum == 2, 0, bumper),
+         netfront = ifelse(netfront == 1 & leftwing == 1, 0, netfront),
+         netfront = ifelse(netfront == 1 & rightwing == 1, 0, netfront)) %>%
+  # Recalculate the sum
+  mutate(sum2 = netfront + bumper + leftpoint + rightpoint + perimeter + leftwing + rightwing) %>%
+  # Remove all shots that are not in a region (outside of the blue line)
+  filter(sum2 != 0) %>%
+  # Select only the player column and the column for each region
+  select(player, netfront, bumper, leftpoint, rightpoint, perimeter, leftwing, rightwing) %>%
+  # Create a column called "region" that represents which region the shot came from
+  mutate(region = case_when(
+    netfront == 1 ~ "netfront",
+    bumper == 1 ~ "bumper",
+    leftpoint == 1 ~ "leftpoint",
+    rightpoint == 1 ~ "rightpoint",
+    perimeter == 1 ~ "perimeter",
+    leftwing == 1 ~ "leftwing",
+    rightwing == 1 ~ "rightwing"
+  )) %>%
+  # Tally the amount of shots each player has in each region
+  group_by(player, region) %>%
+  tally() %>%
+  # "Widen" the data to have one column for each region again but with each row 
+  # representing a player rather than a shot
+  dcast(player ~ region, value.var = "n") %>%
+  # Replace all NA's with 0
+  replace(is.na(.), 0) %>%
+  # Filter for players with only 40+ shots
+  filter(bumper + leftpoint + rightpoint + leftwing + rightwing + netfront + perimeter >= 40)
+
+# Calculate the proportion of shots in each region for each player
+ohl.pp.region.proportions = ohl.pp.region.counts %>%
+  # Find each player's total shots
+  mutate(sum = leftwing + rightwing + leftpoint + rightpoint + netfront + bumper + perimeter) %>%
+  # Calculate the proportion of shots in each region
+  mutate(leftwing = leftwing / sum, rightwing = rightwing / sum,
+         leftpoint = leftpoint / sum, rightpoint = rightpoint / sum,
+         netfront = netfront / sum, bumper = bumper / sum) %>%
+  # Remove the perimeter and sum columns (useless needed for clustering)
+  select(-perimeter, -sum) %>%
+  # Turn the player column into the row names
+  column_to_rownames("player")
+```
+
+
+Plot a visualization of these regions as represented by Figure 1.
+
+```{r}
+# Create a ggplot with data = data.frame(0) since we won't be using any data to make it
+ggplot(data = data.frame(0)) +
+    # 
+    theme_ipsum(axis_text_size = 0, grid = FALSE) +
+    # Add in the rink plot
+    annotation_raster(halfrink, ymin = 0, ymax= 100, xmin = -42.5, xmax = 42.5) +
+    # Add in the shading for each region
+    geom_polygon(data = netfront, aes(x = x, y = y), fill = "yellow", alpha = 0.3) +
+    geom_polygon(data = bumper, aes(x = x, y = y), fill = "skyblue", alpha = 0.3) +
+    geom_polygon(data = leftpoint, aes(x = x, y = y), fill = "orange", alpha = 0.3) +
+    geom_polygon(data = rightpoint, aes(x = x, y = y), fill = "violet", alpha = 0.3) +
+    geom_polygon(data = perimeter, aes(x = x, y = y), fill = "grey", alpha = 0.3) +
+    geom_polygon(data = leftwing, aes(x = x, y = y), fill = "red", alpha = 0.2) +
+    geom_polygon(data = rightwing, aes(x = x, y = y), fill = "limegreen", alpha = 0.3) +
+    # Add in labels for each region
+    geom_text(x = 0, y = 81, label = "Netfront") +
+    geom_text(x = 0, y = 60, label = "Bumper") +
+    geom_text(x = 25, y = 60, label = "Right Flank") +
+    geom_text(x = -25, y = 60, label = "Left Flank") +
+    geom_text(x = 19.75, y = 36.875, label = "Right Point") +
+    geom_text(x = -19.75, y = 36.875, label = "Left Point") +
+    # Limit the xy-coordinate range to just the rink
+    lims(x = c(-42.5, 42.5), y = c(0, 100)) +
+    # Set the aspect ratio at 1
+    coord_fixed(ratio = 1) +
+    # Remove all labels
+    labs(x = NULL, y = NULL)
 ```
 
 ## Creating Shot Maps of the Data

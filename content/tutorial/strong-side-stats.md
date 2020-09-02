@@ -2,7 +2,7 @@
 title: "Strong Side Data Science Series Introduction"
 summary: "Have you ever been interested in learning about statistics, coding, and data science but didn't know where to start? In my series of tutorials called 'Strong Side Data Science' I will attempt to condense university-level topics in math and stats into digestible lessons with applications in R."
 diagram: yes
-date: '2020-08-12'
+date: '2020-08-23'
 markup: mmark+line_blocks
 math: yes
 image:
