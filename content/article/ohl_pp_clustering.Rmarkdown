@@ -2,7 +2,7 @@
 title: "Using Fuzzy c-Means Clustering to Group OHL Players Based on PP Shot Locations"
 summary: "This article will introduce a way to group OHL players based on their power play shot locations using Fuzzy c-Means Clustering with two goals: (1) creating a new framework for clustering shot data and (2) providing casual fans with a visual of where top OHL players are placed on the PP."
 diagram: yes
-date: '2020-10-01'
+date: '2020-09-27'
 markup: mmark
 math: yes
 image:
