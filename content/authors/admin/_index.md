@@ -32,7 +32,10 @@ education:
   courses:
   - course: B.Sc. in Mathematics and Statistics
     institution: McMaster University
-    year: 2020
+    year: 2016-2020
+  - course: Non-Degree Computer Science
+    institution: University of Toronto
+    year: 2020-present
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -69,8 +72,8 @@ user_groups:
 
 I am an aspiring data scientist that has recently graduated from McMaster University with Bachelor of Science in Mathematics and Statistics in April 2020. 
 
-I am currently working with the Visual Neuroscience Lab at McMaster for the summer of 2020 as a recipient of the James Stewart Research Support Award under the supervision of Dr. Kathryn Murphy. In this position, I have been applying machine learning techniques to big data in an attempt address questions related to the neurobiological development of the human brain.
+I am currently taking Computer Science courses at the University of Toronto and working as a Data Analyst with the Visual Neuroscience Lab at McMaster under the supervision of Dr. Kathryn Murphy with funding from a James Stewart Research Award and Mitacs Research Training Award. In this position, I have been applying statistical and machine learning techniques to big data in an attempt to address questions related to neurobiological development of the human brain.
 
-My career objective is to apply data science methods to find innovative insights and solve real-world problems. I am particularly interested in employing my skills in fields that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and (especially) hockey.
+My career objective is to apply data science methods to find innovative insights and solve real-world problems in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and (especially) hockey, and eventually become a leader in whichever industry I specialize in.
 
-In my spare time, I enjoy sharing my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks, and a ball hockey instructor with the MLSE LaunchPad.
+In my spare time, I enjoy sharing my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks, and a ball hockey instructor with the MLSE LaunchPad and I hope to continue coaching once the pandemic subsides.

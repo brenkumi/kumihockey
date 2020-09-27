@@ -2,7 +2,7 @@
 title: "SMWW: Getting Started in Hockey Analytics"
 summary: "I presented my thoughts and tips on how to get started in hockey analytics to a group of students in the Sports Management Worldwide Hockey Analytics course."
 diagram: yes
-date: '2020-07-27'
+date: '2020-09-14'
 markup: mmark
 math: yes
 image:

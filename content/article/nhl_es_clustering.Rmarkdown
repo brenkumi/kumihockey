@@ -1,8 +1,8 @@
 ---
-title: "Categorizing NHL Player ES Shot Tendencies Using Robust Sparse k-Means Clustering"
-summary: "In the final article of my three-part series on player shot clustering, I will turn my attention to a league and strength state with richer shot data as I cluster NHL even strength shot data over the past three seasons. The higher volume of data will allow for sounder methodology with a hexbinning and robust sparse k-means clustering (RSKC) approach."
+title: "Using Robust Sparse k-Means Clustering to Group NHL Players Based on ES Shot Locations (Not complete)"
+summary: "In this article, I will build upon my work on clustering OHL PP shot data with a stronger approach. Using a larger sample size of three season of NHL even strength data, I create a new approach that mitigates the binning issue in the OHL PP clustering article through hexbinning and robust sparse k-means clustering (RSKC)."
 diagram: yes
-date: '2020-08-27'
+date: '2020-10-05'
 markup: mmark
 math: yes
 image:
@@ -18,114 +18,65 @@ knitr::opts_chunk$set(message = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
+```{r packages}
 library(tidyverse)
 library(png)
 library(gcookbook)
 library(hrbrthemes)
 library(sp)
+library(RSKC)
 ```
 
-```{r}
-ohl.shot.data = read_csv("projectdata/ohl-shot-data.csv")
+```{r data}
+# add the nhl shot data
 halfrink = readPNG("projectpics/nhlhalfrink.png")
 ```
 
 # Introduction
 
-
-
-
 # Hexbinning Approach
 
+- Split F and D to improve the algorithm's ability to separate clusters
 
-Controversal binning approach
+- Hexbin approach vs OHL PP approach (much smaller bins)
 
-Why we need to bin the data
+- Diagram of hexbins
 
-How we bin it (diagram)
+- Concern: bins beside each other are treated no different from bins across ice
 
-Delta of mean
-
-
-# What is RSKC?
+- Take delta of the mean for each bin
 
 
+# Robust Sparse k-Means Clustering (RSKC)
+
+- What is it?
+
+- Why use it? (good for high-D data, downweights useless hexbins)
+
+- Iterate 100x?
+
+- Choosing k?
 
 
-## Why Use Hierarchical Clustering?
+## RSKC Algorithm
 
-Better for high-dimensional analysis
-
-
-Iterate?
+- Explain the algorithm
 
 
 # Clustering Results
 
-Network?
-
-## Cluster 1
-
-## Cluster 2
-
-## Cluster 3
-
-## Cluster 4
-
-## Cluster 5
+- Visualization? Network?
 
 # Interesting Observations
 
-## TBD
-
-
-
+- TBD
 
 # Conclusion
 
 ## Limitations
 
 
-## Future work
-
-
 # The Code
-
-## Loading and Preparing the Data
-
-Load all necessary packages.
-
-```
-library(tidyverse)
-```
-
-Load the data set (this data can be found on my [Github](https://github.com/brenkumi/kumihockey) under content/article/projectdata).
-
-```
-ohl.shot.data = read_csv("projectdata/ohl-shot-data.csv")
-```
-
-## Creating Shot Maps of the Data
-
-
-## Creating Regions and Binning the Data
-
-
-## Performing Hierarchical Clustering
-
-
-## Creating Heatmaps of the Data
-
-
-
-## Bootstrapping the Data
-
-
-## Confidence Intervals of Bootstrap Resampling
-
-
-
 
 # References
 

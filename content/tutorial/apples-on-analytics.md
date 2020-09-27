@@ -1,8 +1,8 @@
 ---
-title: "Strong Side Data Science Series Introduction"
-summary: "Have you ever been interested in learning about statistics, coding, and data science but didn't know where to start? In my series of tutorials called 'Strong Side Data Science' I will attempt to condense university-level topics in math and stats into digestible lessons with applications in R."
+title: "Apples on Analytics Series Introduction"
+summary: "Have you ever been interested in learning about hockey analytics but didn't know where to start? In my series of tutorials called 'Apples on Analytics' I will attempt to condense university-level topics in math and stats into digestible lessons with applications in R."
 diagram: yes
-date: '2020-08-23'
+date: '2020-10-10'
 markup: mmark+line_blocks
 math: yes
 image:
@@ -10,9 +10,9 @@ image:
   placement: null
 ---
 
-## What is Strong Side Data Science?
+## What is Apples on Analytics?
 
-Strong Side Data Science is a set of tutorials I will be making to give back to the sports analytics community and help others get started with stats, coding, machine learning and other data-related topics. Although most of these tutorials won't touch on advanced data science topics, I used the name Strong Side Data Science as an umbrella term for anything int statistics, machine learning, computer science, and coding that I will touch upon.
+Apples on Analytics is a set of tutorials I will be making to give back to the sports analytics community and help others get started with stats, coding, machine learning and other data-related topics. Although most of these tutorials won't touch on advanced data science topics, I used the name Strong Side Data Science as an umbrella term for anything int statistics, machine learning, computer science, and coding that I will touch upon.
 
 There are three goals I hope to achieve with these tutorials:
 
