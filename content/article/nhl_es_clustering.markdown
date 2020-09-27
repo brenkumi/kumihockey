@@ -1,6 +1,6 @@
 ---
 title: "Using Robust Sparse k-Means Clustering to Group NHL Players Based on ES Shot Locations (Not complete)"
-summary: "In this article, I will build upon my work on clustering OHL PP shot data with a stronger approach. Using a larger sample size of three season of NHL even strength data, I create a new approach that mitigates the binning issue in the OHL PP clustering article through hexbinning and robust sparse k-means clustering (RSKC)."
+summary: "In this article, I will build upon my work on clustering OHL PP shot data with a stronger approach. Using a larger sample size of three season of NHL even strength data, "
 diagram: yes
 date: '2020-10-05'
 markup: mmark
@@ -9,10 +9,6 @@ image:
   caption: null
   placement: null
 ---
-
-
-
- 
 
 
 
