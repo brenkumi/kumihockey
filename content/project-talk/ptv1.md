@@ -12,7 +12,7 @@ links:
 - icon: file-pdf
   icon_pack: fas
   name: Slides
-  url: https://www.dropbox.com/s/ws3kasczf3d17p8/ISOLHAC%20-%20Point%20Trend%20Values.pdf?dl=0
+  url: https://www.dropbox.com/s/43b6635q3rw3bdo/ISOLHAC%20-%20Point%20Trend%20Values%20I%20-%20Brendan%20Kumagai.pdf?dl=0
 - icon: youtube
   icon_pack: fab
   name: Video
