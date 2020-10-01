@@ -72,7 +72,7 @@ user_groups:
 
 I am an aspiring data scientist that has recently graduated from McMaster University with Bachelor of Science in Mathematics and Statistics in April 2020. 
 
-I am currently taking Computer Science courses at the University of Toronto and working as a Data Analyst with the Visual Neuroscience Lab at McMaster under the supervision of Dr. Kathryn Murphy with funding from a James Stewart Research Award and Mitacs Research Training Award. In this position, I have been applying statistical and machine learning techniques to big data in an attempt to address questions related to neurobiological development of the human brain.
+I am currently taking Computer Science courses at the University of Toronto and working as a Data Analyst with the Visual Neuroscience Lab at McMaster under the funding of a James Stewart Research Award and a Mitacs Research Training Award. In this position, I have been applying statistical and machine learning techniques to big data in an attempt to address questions related to neurobiological development of the human brain.
 
 My career objective is to apply data science methods to find innovative insights and solve real-world problems in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and (especially) hockey, and eventually become a leader in whichever industry I specialize in.
 
