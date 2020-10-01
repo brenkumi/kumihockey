@@ -706,5 +706,21 @@ fviz_cluster(list(data = ohl.pp.region.proportions, cluster = ohl.pp.region.FCM$
 
 <img src="/article/ohl_pp_clustering_files/figure-html/PCA2-1.png" width="672" />
  
+# References and Resources
 
+Fuzzy c-Means Clustering
+
+1. https://www.datanovia.com/en/lessons/fuzzy-clustering-essentials/fuzzy-c-means-clustering-algorithm/
+
+2. https://sites.google.com/site/dataclusteringalgorithms/fuzzy-c-means-clustering-algorithm
+
+3. https://www.datanovia.com/en/lessons/fuzzy-clustering-essentials/cmeans-r-function-compute-fuzzy-clustering/
+
+Prvious Work on Shot Clustering
+
+4. https://em-ee.netlify.app/post/nhl_clusters.html
+
+5. https://hockey-graphs.com/2018/01/04/goal-scorer-cluster-analysis/
+
+6. https://threepointgames.blogspot.com/2018/05/who-plays-where-determining-skater.html).
 
