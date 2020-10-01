@@ -172,7 +172,7 @@ Concentrated Netfront | 52.4 | 9.9 | 18.89% | Jack Quinn (2020), Alec Regula (CH
 Bumper and Netfront | 47.6 | 7.1 | 14.89% | Phil Tomasino (NSH), Ty Dellandrea (DAL)
 Left Flank | 58.5 | 9.1 | 15.63% | Shane Wright (2022), Connor McMichael (WSH), Quinton Byfield (2020), Marco Rossi (2020)
 Right Flank | 67.6 | 10.5 | 15.53% | Nick Robertson (TOR), Arthur Kaliyev (LA), Cole Perfetti (2020)
-PP Quarterback | 56.2 | 5.8 | 10.22% | Thomas Harley (DAL), Ryan Merkley (SJ)
+The Point | 56.2 | 5.8 | 10.22% | Thomas Harley (DAL), Ryan Merkley (SJ)
 
 # Conclusion
 
