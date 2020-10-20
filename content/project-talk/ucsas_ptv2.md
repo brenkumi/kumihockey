@@ -1,8 +1,8 @@
 ---
 title: "UCSAS: Point Trend Values II"
-summary: "My poster presenting my updated work on Point Trend Values at the U-Conn Sports Analytics Symposium poster competition. This content is very similar to my presentation at ISOLHAC but with sounder methodology in the calculation of the metric and shared code and data."
+summary: "My poster presenting my updated work on Point Trend Values at the U-Conn Sports Analytics Symposium poster competition. This content is very similar to my presentation at ISOLHAC but with sounder methodology in the calculation of the metric and shared code and data. I finished the competition in a tie for 1st place with Nate Rowan."
 diagram: yes
-date: '2020-10-06'
+date: '2020-10-10'
 markup: mmark
 math: yes
 image:
@@ -22,6 +22,8 @@ links:
   name: Data and R Code
   url: https://www.dropbox.com/s/x2dvbbitnpkbiy8/CHL-Trend-Values-Project.zip?dl=0
 ---
+
+*Placement: Tie for 1st*
 
 The general theory in hockey scouting is that if a player improves as the season goes on, then he or she can elevate to another level when the games become more meaningful and will be better able to adapt to professional hockey. In this poster, I put this idea to the test by taking game-by-game points data from OHL and WHL forwards between 2010-11 to 2018-19 and determining their "Point Trend Value" (PTV). A Point Trend Value is a new metric that I introduce here that measures a player's rate of improvement in cumulative point production over a season. 
 
