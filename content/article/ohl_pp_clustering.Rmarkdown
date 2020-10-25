@@ -259,6 +259,8 @@ shot.plots = function(data = ohl.shot.data, subject = NULL, clust = NULL, all = 
 }
 ```
 
+*Note: the results of this article are fine, but if you are looking for a better methodology for clustering players based on shot location, check out my [poster from the Carnegie Mellon Sports Analytics Conference](https://www.kumihockey.com/project-talk/cmsac_shotclust/).*
+
 # Introduction
 
 Since the NHL was formed in 1917, the OHL (formerly OHA before 1980) has consistently been one of the best pipelines for future NHL stars. However, many hockey fans don't have the ability or time to watch these prospects on a regular basis.
