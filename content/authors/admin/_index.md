@@ -10,21 +10,21 @@ authors:
 superuser: true
 
 # Role/position
-role: Neuroscience Data Analyst
+role: Sports Analyst Intern
 
 # Organizations/Affiliations
 organizations:
-- name: McMaster University, Visual Neuroscience Lab
-  url: "http://www.visualneurosciencelab.ca/"
+- name: Canadian Tire Financial Services
+  url: "https://www.ctfs.com/content/ctfs/en.html"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Aspiring data scientist with a passion for hockey and science.
 
 interests:
-- Hockey Analytics and Operations
-- Data Science
-- Spatio-Temporal Data Analysis
-- Biodiversity, Conservation and Sustainability
+- Sports Analytics and Operations
+- Machine Learning
+- Spatio-Temporal Modelling
+- Biodiversity and Conservation
 - Neuroscience
 - Biomechanics
 
@@ -32,10 +32,10 @@ education:
   courses:
   - course: B.Sc. in Mathematics and Statistics
     institution: McMaster University
-    year: 2016-2020
+    year: Sept 2016-Apr 2020
   - course: Non-Degree Computer Science
     institution: University of Toronto
-    year: 2020-present
+    year: Sept 2020-Dec 2020
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -70,10 +70,10 @@ user_groups:
 - Visitors
 ---
 
-I am an aspiring data scientist that has recently graduated from McMaster University with Bachelor of Science in Mathematics and Statistics in April 2020. 
+I am an aspiring data scientist currently interning as a Sports Analyst with Canadian Tire where I develop and implement analytical methodologies to assist [Own the Podium](https://www.ownthepodium.org/en-CA/) and Canadian national sports organizations in making data-driven decisions.
 
-I am currently taking Computer Science courses at the University of Toronto and working as a Data Analyst with the Visual Neuroscience Lab at McMaster under the funding of a James Stewart Research Award and a Mitacs Research Training Award. In this position, I have been applying statistical and machine learning techniques to big data in an attempt to address questions related to neurobiological development of the human brain.
+I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and spent the remainder of 2020 doing research as a Data Analyst with the Visual Neuroscience Lab at Mac under the funding of a James Stewart Research Award and a Mitacs Research Training Award. In that position, I applied statistical and machine learning techniques to large genomic data sets in an attempt to address questions related to both the neurobiological development of the human visual cortex and the lifespan trends in SARS-CoV-2 receptors and co-receptors in the human brain.
 
-My career objective is to apply data science methods to find innovative insights and solve real-world problems in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and hockey, and eventually become a leader in whichever industry I specialize in.
+My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and especially sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
 In my spare time, I enjoy sharing my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks, and a ball hockey instructor with the MLSE LaunchPad and I hope to continue coaching once the pandemic subsides.
