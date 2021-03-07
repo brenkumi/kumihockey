@@ -1,5 +1,5 @@
 ---
-title: "ISOLHAC: Point Trend Values I"
+title: "ISOLHAC '20: Point Trend Values I"
 summary: "In this presentation I create a new metric called Point Trend Values to quantify trends in a player's cumulative point production and explore the predictive power of this metric on OHL and WHL forwards."
 diagram: yes
 date: '2020-05-09'

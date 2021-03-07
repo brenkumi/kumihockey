@@ -1,5 +1,5 @@
 ---
-title: "UCSAS: Point Trend Values II"
+title: "UCSAS '20: Point Trend Values II"
 summary: "My poster presenting my updated work on Point Trend Values at the U-Conn Sports Analytics Symposium poster competition. This content is very similar to my presentation at ISOLHAC but with sounder methodology in the calculation of the metric and shared code and data. I finished the competition in a tie for 1st place with Nate Rowan."
 diagram: yes
 date: '2020-10-10'

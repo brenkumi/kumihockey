@@ -1,5 +1,5 @@
 ---
-title: "CMSAC: Clustering and Analyzing 5v5 NHL Shot Location Data"
+title: "CMSAC '20: Clustering and Analyzing 5v5 NHL Shot Location Data"
 summary: "My poster presenting my work on clustering 5v5 NHL shot maps at the 2020 Carnegie Mellon Sports Analytics Conference poster competition. I find 10 clusters of players based off of their shooting patterns and analyzing the composition of these clusters."
 diagram: yes
 date: '2020-10-25'
