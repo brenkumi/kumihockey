@@ -23,7 +23,8 @@ bio: Aspiring data scientist with a passion for hockey and science.
 interests:
 - Sports Analytics and Operations
 - Machine Learning
-- Spatio-Temporal Modelling
+- Spatiotemporal Statistics
+- Bayesian Statistics
 - Biodiversity and Conservation
 - Neuroscience
 - Biomechanics
