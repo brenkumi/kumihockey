@@ -23,7 +23,7 @@ links:
   url: https://www.dropbox.com/s/x2dvbbitnpkbiy8/CHL-Trend-Values-Project.zip?dl=0
 ---
 
-*Placement: Tie for 1st*
+*Placement: Tied in 1st out of 22*
 
 The general theory in hockey scouting is that if a player improves as the season goes on, then he or she can elevate to another level when the games become more meaningful and will be better able to adapt to professional hockey. In this poster, I put this idea to the test by taking game-by-game points data from OHL and WHL forwards between 2010-11 to 2018-19 and determining their "Point Trend Value" (PTV). A Point Trend Value is a new metric that I introduce here that measures a player's rate of improvement in cumulative point production over a season. 
 

@@ -1,8 +1,8 @@
 ---
 title: "BDC '21: Bayesian Space-Time Models for Expected Possession Added Value"
-summary: "A group submission for the Stathletes' Big Data Cup 2021 along with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work involved quantifying the value of each event in offensive entry-to-exit sequences using a Markov decision process with transition probabilities estimated via INLA."
+summary: "My group's 1st-place submission for the Stathletes' Big Data Cup 2021 along with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work involved quantifying the value of each event in offensive entry-to-exit sequences through the use of various Bayesian spatiotemporal models and a Markov Decision Process."
 diagram: yes
-date: '2021-03-05'
+date: '2021-03-26'
 markup: mmark
 math: yes
 image:
@@ -18,6 +18,8 @@ links:
   name: Data and Code
   url: https://github.com/brenkumi/BigDataCup2021
 ---
+
+*Placement: 1st out of 71*
 
 To date, public hockey analysis has largely been limited to shot data and manually-tracked microstats. I had the pleasure of working with the brilliant minds of Tyrel Stokes, Mikael Nahabedian and Thibaud Châtel to develop a comprehensive Bayesian Markov decision model that can estimate the value of each event in entry-to-exit play sequences. This model allows us to go beyond valuing events in isolation to capture the dependencies within the overall chain of events. Additionally, we use INLA (Integrated Nested Laplace Approximation) to estimate the fluid and dynamic spatiotemporal effects that evolve as a play develops. 
 
