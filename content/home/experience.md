@@ -23,7 +23,7 @@ date_format = "Jan 2006"
   company_url = "http://www.visualneurosciencelab.ca/"
   location = "Hamilton, ON"
   date_start = "2020-05-04"
-  date_end = ""
+  date_end = "2020-12-31"
 #   description = """
 #   Responsibilities include:
   
@@ -32,13 +32,12 @@ date_format = "Jan 2006"
 #   * Deploying
 #   """
 
-# [[experience]]
-#   title = "Professor"
-#   company = "University X"
-#   company_url = ""
-#   location = "California"
-#   date_start = "2016-01-01"
-#   date_end = "2016-12-31"
-#   description = """Taught electronic engineering and researched semiconductor physics."""
+[[experience]]
+  title = "Sports Analyst Intern"
+  company = "Canadian Tire Financial Services"
+  company_url = "ttps://www.ctfs.com/content/ctfs/en.html"
+  location = "Toronto, ON"
+  date_start = "2021-01-05"
+  date_end = ""
 
 +++
