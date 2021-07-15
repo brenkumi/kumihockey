@@ -25,9 +25,6 @@ interests:
 - Machine Learning
 - Spatiotemporal Statistics
 - Bayesian Statistics
-- Biodiversity and Conservation
-- Neuroscience
-- Biomechanics
 
 education:
   courses:
@@ -37,6 +34,9 @@ education:
   - course: Non-Degree Computer Science
     institution: University of Toronto
     year: Sept 2020-Dec 2020
+  - course: M.Sc. in Statistics
+    institution: Simon Fraser University
+    year: Starting Sept 2021
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -75,7 +75,7 @@ I am an aspiring data scientist currently interning as a Sports Analyst with Can
 
 I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and spent the remainder of 2020 doing research as a Data Analyst with the Visual Neuroscience Lab at Mac under the funding of a James Stewart Research Award and a Mitacs Research Training Award. In that position, I applied statistical and machine learning techniques to large genomic data sets in an attempt to address questions related to both the neurobiological development of the human visual cortex and the lifespan trends in SARS-CoV-2 receptors and co-receptors in the human brain.
 
-I will be attending [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) beginning in the fall of 2021 as a M.Sc. in Statistics candidate under the supervision of Dr. Tim Swartz where my research will likely involve applications of Bayesian statistics in hockey analytics.
+I will be attending [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) beginning in the fall of 2021 as a M.Sc. in Statistics candidate under the supervision of Dr. Tim Swartz where my research will likely involve applications of statistics in hockey.
 
 My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and especially sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
