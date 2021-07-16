@@ -1,5 +1,5 @@
 ---
-title: "BDC '21: Bayesian Space-Time Models for Expected Possession Added Value"
+title: "OTTHAC '21: Bayesian Space-Time Models for Expected Possession Added Value"
 summary: "My group's 1st-place submission for the Stathletes' Big Data Cup 2021 along with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work involved quantifying the value of each event in offensive entry-to-exit sequences through the use of various Bayesian spatiotemporal models and a Markov Decision Process."
 diagram: yes
 date: '2021-03-26'
@@ -7,16 +7,25 @@ markup: mmark
 math: yes
 image:
   caption: null
-  placement: null
+  focal_point: null
 links:
 - icon: file-pdf
   icon_pack: fas
   name: Paper
   url: https://github.com/brenkumi/BigDataCup2021/blob/main/Final%20Paper/BDC21%20-%20Bayesian%20Space-Time%20Models%20for%20Expected%20Possession%20added%20Value.pdf
+- icon: file-pdf
+  icon_pack: fas
+  name: Slides
+  url: https://www.dropbox.com/s/6z66zdy6o9qzr6y/BDC%20-%20Bayesian%20Space-Time%20Models%20for%20Expected%20Possesion%20Added%20Value.pdf?dl=0
+
 - icon: r-project
   icon_pack: fab
   name: Data and Code
   url: https://github.com/brenkumi/BigDataCup2021
+- icon: youtube
+  icon_pack: fab
+  name: Video
+  url: https://www.youtube.com/watch?v=etTYTFt4Z-Y&t=2260s
 ---
 
 *Placement: 1st out of 71*

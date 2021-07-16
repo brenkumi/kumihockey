@@ -79,4 +79,4 @@ I will be attending [Simon Fraser University](https://www.sfu.ca/stat-actsci.htm
 
 My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and especially sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
-In my spare time, I enjoy sharing my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks, and a ball hockey instructor with the MLSE LaunchPad and I hope to continue coaching once the pandemic subsides.
+In my spare time, I enjoy sharing my knowledge and passion of hockey with today's youth. During the 2019-20 season, I was an assistant coach for my former minor hockey club, the West Hill Golden Hawks, and a ball hockey instructor with the MLSE LaunchPad and I hope to continue coaching once I complete my Master's.
