@@ -1,6 +1,6 @@
 ---
 title: "WHKYHAC '21: The Shot Chain"
-summary: "Joint project with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work here goes beyond the traditional expected goals model by building out a chain of Bayesian logisitc models to analyze shooter talent and the context of shots in women's hockey."
+summary: "Joint project with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work here goes beyond the traditional expected goals model by building out a chain of Bayesian logistic models to analyze shooter talent and the context of shots in women's hockey."
 diagram: yes
 date: '2021-07-10'
 markup: mmark
