@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Hockey Data Science Intern
+role: Data Science Intern
 
 # Organizations/Affiliations
 organizations:
-- name: Stathletes
-  url: "https://www.stathletes.com/"
+- name: Zelus Analytics
+  url: "https://www.zelusanalytics.com/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Aspiring data scientist with a passion for hockey and science.
+bio: Data scientist with a passion for hockey and science.
 
 interests:
 - Sports Analytics and Operations
@@ -68,9 +68,9 @@ user_groups:
 - Visitors
 ---
 
-I am currently a Hockey Data Science Intern at [Stathletes](https://www.stathletes.com/) where I develop and implement statistical models and methods to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. Additionally, I attend [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) as a M.Sc. in Statistics student under the supervision of Dr. Tim Swartz where I am currently doing research at the intersection of data science and sports.
+I am currently a Data Science Intern on the Hockey Research & Development team at [Zelus Analytics](https://www.zelusanalytics.com/) where we develop advanced statistical and machine learning models using cutting-edge data to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. Additionally, I attend [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) as a M.Sc. in Statistics student under the supervision of Dr. Tim Swartz where I am currently doing research at the intersection of data science and sports.
 
-I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and spent the remainder of 2020 doing research as a Data Analyst with the Visual Neuroscience Lab at Mac under the funding of a James Stewart Research Award and a Mitacs Research Training Award. In that position, I applied statistical and machine learning techniques to large genomic data sets in an attempt to address questions related to both the neurobiological development of the human visual cortex and the lifespan trends in SARS-CoV-2 receptors and co-receptors in the human brain. Upon leaving McMaster, I interned as a Sports Analyst with Canadian Tire where I created statistical reports, novel metrics, and interactive dashboards to assist [Own the Podium](https://www.ownthepodium.org/en-CA/) and Canadian national sports organizations in making data-driven decisions.
+Previously, I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and completed Data Analyst and Data Scientist internships with the McMaster Visual Neuroscience Lab, the Canadian Tire Sports Analytics team and Stathletes.
 
 My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and especially sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
