@@ -30,7 +30,7 @@ education:
   courses:
   - course: B.Sc. in Mathematics and Statistics
     institution: McMaster University
-    year: Sept 2016 - Apr 2020
+    year: Sept 2016-Apr 2020
   - course: M.Sc. in Statistics
     institution: Simon Fraser University
     year: Sept 2021 - Dec 2022
@@ -72,5 +72,5 @@ I am a Data Scientist on the Hockey Research & Development team at [Zelus Analyt
 
 Previously, I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and completed Data Analyst and Data Scientist internships with the McMaster Visual Neuroscience Lab, the Canadian Tire Sports Analytics team and Stathletes.
 
-My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and *especially sports* with hopes of becoming a leader at the intersection of data science and hockey in the future.
+My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and *especially* sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
