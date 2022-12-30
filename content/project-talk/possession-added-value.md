@@ -1,6 +1,6 @@
 ---
-title: "OTTHAC '21: Bayesian Space-Time Models for Expected Possession Added Value"
-summary: "My group's 1st-place submission for the Stathletes' Big Data Cup 2021 along with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel. Our work involved quantifying the value of each event in offensive entry-to-exit sequences through the use of various Bayesian spatiotemporal models and a Markov Decision Process."
+title: "Bayesian Space-Time Models for Expected Possession Added Value"
+summary: "This project was joint work along with Tyrel Stokes, Mikael Nahabedian, and Thibaud Châtel for the 2021 Stathletes' Big Data Cup. Our work involved quantifying the value of each event in offensive entry-to-exit sequences through the use of various Bayesian spatiotemporal models and a Markov Decision Process. Our team was awarded 1st place out of 71 submissions."
 diagram: yes
 date: '2021-03-26'
 markup: mmark
@@ -11,21 +11,36 @@ image:
 links:
 - icon: file-pdf
   icon_pack: fas
-  name: Paper
+  name: BDC Paper
   url: https://github.com/brenkumi/BigDataCup2021/blob/main/Final%20Paper/BDC21%20-%20Bayesian%20Space-Time%20Models%20for%20Expected%20Possession%20added%20Value.pdf
 - icon: file-pdf
   icon_pack: fas
-  name: Slides
+  name: BDC Slides
   url: https://www.dropbox.com/s/6z66zdy6o9qzr6y/BDC%20-%20Bayesian%20Space-Time%20Models%20for%20Expected%20Possesion%20Added%20Value.pdf?dl=0
-
-- icon: r-project
+- icon: youtube
+  icon_pack: fab
+  name: BDC Presentation
+  url: https://www.youtube.com/watch?v=etTYTFt4Z-Y&t=2260s
+- icon: github
   icon_pack: fab
   name: Data and Code
   url: https://github.com/brenkumi/BigDataCup2021
+- icon: book-open
+  icon_pack: fas
+  name: Hockey Graphs Article I
+  url: https://hockey-graphs.com/2021/07/06/bayesian-space-time-models-for-expected-possession-added-value-part-1-of-2/
+- icon: book-open
+  icon_pack: fas
+  name: Hockey Graphs Article II
+  url: https://hockey-graphs.com/2021/08/09/bayesian-space-time-models-for-expected-possession-added-value-part-2-of-2/
+- icon: podcast
+  icon_pack: fas
+  name: Hockey IQ Podcast
+  url: https://podcasts.apple.com/il/podcast/kumagai-nahabedian-ch%C3%A2tel-stokes/id1524738355?i=1000536956909
 - icon: youtube
   icon_pack: fab
-  name: Video
-  url: https://www.youtube.com/watch?v=etTYTFt4Z-Y&t=2260s
+  name: SFU SAG Presentation
+  url: https://www.youtube.com/watch?v=WkT5MpoxhQI
 ---
 
 *Placement: 1st out of 71*

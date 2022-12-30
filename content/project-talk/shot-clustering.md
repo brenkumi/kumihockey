@@ -1,6 +1,6 @@
 ---
-title: "CMSAC '20: Clustering and Analyzing 5v5 NHL Shot Location Data"
-summary: "My poster presenting my work on clustering 5v5 NHL shot maps at the 2020 Carnegie Mellon Sports Analytics Conference poster competition. I find 10 clusters of players based off of their shooting patterns and analyzing the composition of these clusters."
+title: "Clustering and Analyzing 5v5 NHL Shot Location Data"
+summary: "A poster presenting my work on clustering 5v5 NHL shot maps at the 2020 Carnegie Mellon Sports Analytics Conference poster competition. I find 10 clusters of players based off of their shooting patterns and analyzing the composition of these clusters."
 diagram: yes
 date: '2020-10-25'
 markup: mmark
@@ -16,7 +16,7 @@ links:
 - icon: black-tie
   icon_pack: fab
   name: Conference Webpage
-  url: http://www.stat.cmu.edu/cmsac/conference/2020/
+  url: https://www.stat.cmu.edu/cmsac/poster2020/
 - icon: r-project
   icon_pack: fab
   name: Data and R Code

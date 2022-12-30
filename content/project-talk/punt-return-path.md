@@ -1,6 +1,6 @@
 ---
-title: "BDB '22: Punt Returns: Using the Math to Find the Path"
-summary: "My group's Grand Champion submission for the 2022 NFL Big Data Bowl along with Ryker Moreau, Elijah Cavan, and Robyn Ritchie. Our work involved designing and implementing an algorithm to find the ball carrier's optimal path on punt return plays."
+title: "Punt Returns: Using the Math to Find the Path"
+summary: "This project was joint work along with Ryker Moreau, Elijah Cavan, and Robyn Ritchie for the 2022 NFL Big Data Bowl. Our work involved designing and implementing an algorithm to find the ball carrier's optimal path on punt return plays. We were awarded 1st place out of 268 total submissions."
 diagram: yes
 date: '2022-04-22'
 markup: mmark
@@ -9,8 +9,8 @@ image:
   caption: null
   focal_point: null
 links:
-- icon: file-pdf
-  icon_pack: fas
+- icon: kaggle
+  icon_pack: fab
   name: Kaggle Submission
   url: https://www.kaggle.com/robynritchie/punt-returns-using-the-math-to-find-the-path
 - icon: r-project
@@ -23,8 +23,12 @@ links:
   url: https://operations.nfl.com/gameday/analytics/big-data-bowl/2022-big-data-bowl-video-gallery/
 - icon: youtube
   icon_pack: fab
-  name: SFU Sports Analytics Group Presentation
+  name: SFU SAG Presentation
   url: https://www.youtube.com/watch?v=IuYmBC1dyNs
+- icon: youtube
+  icon_pack: fab
+  name: RStudio Presentation
+  url: https://www.youtube.com/watch?v=1sPSvt3wmxs
 ---
 
 *Placement: 1st out of 268*

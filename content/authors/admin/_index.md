@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Data Science Intern
+role: Data Scientist
 
 # Organizations/Affiliations
 organizations:
@@ -30,10 +30,10 @@ education:
   courses:
   - course: B.Sc. in Mathematics and Statistics
     institution: McMaster University
-    year: Sept 2016-Apr 2020
+    year: Sept 2016 - Apr 2020
   - course: M.Sc. in Statistics
     institution: Simon Fraser University
-    year: Sept 2021 - Present
+    year: Sept 2021 - Dec 2022
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -68,9 +68,9 @@ user_groups:
 - Visitors
 ---
 
-I am currently a Data Science Intern on the Hockey Research & Development team at [Zelus Analytics](https://www.zelusanalytics.com/) where we develop advanced statistical and machine learning models using cutting-edge data to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. Additionally, I attend [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) as a M.Sc. in Statistics student under the supervision of Dr. Tim Swartz where I am currently doing research at the intersection of data science and sports.
+I am a Data Scientist on the Hockey Research & Development team at [Zelus Analytics](https://www.zelusanalytics.com/) where we develop advanced statistical and machine learning models using cutting-edge data to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. Additionally, I recently graduated from [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) with a M.Sc. in Statistics student under the supervision of Dr. Tim Swartz where I did research at the intersection of data science and sports with a focus on the NHL draft.
 
 Previously, I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and completed Data Analyst and Data Scientist internships with the McMaster Visual Neuroscience Lab, the Canadian Tire Sports Analytics team and Stathletes.
 
-My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and especially sports with hopes of becoming a leader at the intersection of data science and hockey in the future.
+My career objective is to apply data science methods to develop innovative and original research in a field that I am passionate about such as neuroscience, biomechanics, conservation and sustainability, and *especially sports* with hopes of becoming a leader at the intersection of data science and hockey in the future.
 
