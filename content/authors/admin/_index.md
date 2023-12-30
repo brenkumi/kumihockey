@@ -68,7 +68,7 @@ user_groups:
 - Visitors
 ---
 
-I am a Data Scientist on the Hockey Research & Development team at [Zelus Analytics](https://www.zelusanalytics.com/) where we develop advanced statistical and machine learning models using cutting-edge data to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. Additionally, I recently graduated from [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) with a M.Sc. in Statistics student under the supervision of Dr. Tim Swartz where I did research at the intersection of data science and sports with a focus on the NHL draft.
+I am a Data Scientist on the Hockey Research & Development team at [Zelus Analytics](https://www.zelusanalytics.com/) where we develop advanced statistical and machine learning models using cutting-edge data to improve our understanding of the game of hockey and provide clients with objective, data-informed insights. I specialize in applications of statistical methods to spatiotemporal tracking data in hockey. I hold a M.Sc. in Statistics from [Simon Fraser University](https://www.sfu.ca/stat-actsci.html) where I studied under the supervision of Dr. Tim Swartz with research focused on the NHL draft.
 
 Previously, I graduated with a B.Sc. in Mathematics and Statistics from McMaster University in April 2020 and completed Data Analyst and Data Scientist internships with the McMaster Visual Neuroscience Lab, the Canadian Tire Sports Analytics team and Stathletes.
 

@@ -1,0 +1,10 @@
+
+To edit the navigation bar, see config/_default/menus.toml
+
+To edit projects and talks, see content/project-talk/...
+
+To edit bio, see content/authors/admin/_index.md
+
+To edit experience, see content/home/experience.md
+
+To edit theme, see data/themes/my_theme.toml
